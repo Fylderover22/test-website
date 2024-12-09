@@ -7,37 +7,53 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #f3ec78, #af4261);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
             color: #fff;
-            text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            text-align: center;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
         }
         audio {
-            width: 80%;
+            width: 90%;
             max-width: 400px;
-            border: 2px solid #fff;
-            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
             padding: 10px;
             background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            color: #ffde59;
         }
     </style>
 </head>
 <body>
-    <h1>Listen to This Audio</h1>
+    <h1>🎵 Enjoy the Audio 🎵</h1>
     <audio controls>
         <source src="Scared%20Child%20Audition.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <footer>
+        Made with ❤️ by <a href="https://fylderever22.github.io/test-website/" target="_blank">You</a>
+    </footer>
 </body>
 </html>
