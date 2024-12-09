@@ -4,14 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Clip</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f3ec78, #af4261);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        audio {
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center; margin-top: 20%;">Audio Clip Test</h1>
-    <div style="text-align: center; margin-top: 20px;">
-        <audio controls>
-            <source src="Scared%20Child%20Audition.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+    <h1>Listen to This Audio</h1>
+    <audio controls>
+        <source src="Scared%20Child%20Audition.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
