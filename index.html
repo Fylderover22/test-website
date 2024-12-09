@@ -3,77 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Collection</title>
+    <title>Custom Audio Player</title>
     <style>
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #4e54c8, #8f94fb);
             color: #fff;
+            text-align: center;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 20px;
-            text-align: center;
+            height: 100vh;
         }
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
-        .audio-container {
+        .audio-player {
             width: 90%;
             max-width: 600px;
-            margin-bottom: 20px;
+            margin: 20px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
         .audio-title {
             font-size: 1.5rem;
             margin-bottom: 10px;
-            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        audio {
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .progress-bar {
             width: 100%;
-            border: 2px solid rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
-            padding: 5px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            appearance: none;
+            cursor: pointer;
         }
-        footer {
-            margin-top: 40px;
+        .progress-bar::-webkit-slider-thumb {
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #ffde59;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .volume-bar {
+            width: 60%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            appearance: none;
+            cursor: pointer;
+        }
+        .volume-bar::-webkit-slider-thumb {
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #ffde59;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        button {
+            background: #ffde59;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        footer a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
             font-weight: bold;
+            color: #4e54c8;
         }
-        footer a:hover {
-            color: #ffde59;
+        button:hover {
+            background: #ffd700;
         }
     </style>
 </head>
 <body>
-    <h1>Audio Collection</h1>
-    <div class="audio-container">
+    <h1>Custom Audio Player</h1>
+    <div class="audio-player">
         <div class="audio-title">Scared Child Audition</div>
-        <audio controls>
-            <source src="Scared%20Child%20Audition.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+        <audio id="audio1" src="Scared%20Child%20Audition.mp3"></audio>
+        <div class="controls">
+            <button id="playPause1">Play</button>
+            <input type="range" id="progress1" class="progress-bar" value="0" min="0" max="100">
+            <input type="range" id="volume1" class="volume-bar" value="100" min="0" max="100">
+        </div>
     </div>
-    <div class="audio-container">
-        <div class="audio-title">Lying</div>
-        <audio controls>
-            <source src="lying.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-    <footer>
-        Made with ❤️ by <a href="https://fylderever22.github.io/test-website/" target="_blank">You</a>
-    </footer>
+    <script>
+        // Audio player 1
+        const audio1 = document.getElementById('audio1');
+        const playPause1 = document.getElementById('playPause1');
+        const progress1 = document.getElementById('progress1');
+        const volume1 = document.getElementById('volume1');
+
+        playPause1.addEventListener('click', () => {
+            if (audio1.paused) {
+                audio1.play();
+                playPause1.textContent = 'Pause';
+            } else {
+                audio1.pause();
+                playPause1.textContent = 'Play';
+            }
+        });
+
+        audio1.addEventListener('timeupdate', () => {
+            progress1.value = (audio1.currentTime / audio1.duration) * 100 || 0;
+        });
+
+        progress1.addEventListener('input', () => {
+            audio1.currentTime = (progress1.value / 100) * audio1.duration;
+        });
+
+        volume1.addEventListener('input', () => {
+            audio1.volume = volume1.value / 100;
+        });
+    </script>
 </body>
 </html>
