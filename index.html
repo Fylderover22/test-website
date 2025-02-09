@@ -1,217 +1,91 @@
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Player</title>
-    <style>
-        /* Global Styles */
-        /*
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1e293b, #64748b);
-            color: #f8fafc;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+<html data-bs-theme="dark" lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>troy_en</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png">
+<style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style></head>
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #f8fafc;
-        }
-
-        /* Audio Player Styles */
-        .audio-player {
-            width: 90%;
-            max-width: 600px;
-            margin: 20px;
-            padding: 20px;
-            background: #334155;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .audio-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #f1f5f9;
-        }
-
-        .controls {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Buttons */
-        button {
-            background: #0ea5e9;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #f8fafc;
-            transition: all 0.2s ease-in-out;
-        }
-
-        button:hover {
-            background: #0284c7;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Progress and Volume Bars */
-        input[type="range"] {
-            width: 100%;
-            max-width: 500px;
-            height: 6px;
-            background: #94a3b8;
-            border-radius: 4px;
-            appearance: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            background: #0ea5e9;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        input[type="range"]:hover {
-            background: #cbd5e1;
-        }
-
-        label {
-            font-size: 1rem;
-            color: #cbd5e1;
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
-        */
-    </style>
-</head>
 <body>
-    <!--
-    <h1>Audio Player</h1>
-    <div class="audio-player">
-        <div class="audio-title" id="audioTitle">Scared Child Audition</div>
-        <audio id="audio" src="Scared%20Child%20Audition.mp3"></audio>
-        <div class="controls">
-            <div class="navigation">
-                <button id="prev">⏮ Previous</button>
-                <button id="playPause">Play</button>
-                <button id="next">Next ⏭</button>
-            </div>
-            <input type="range" id="progress" value="0" min="0" max="100">
-            <div>
-                <label for="volume">Volume:</label>
-                <input type="range" id="volume" value="100" min="0" max="100">
+    
+    <!-- HERO CODE -->
+    <div class="hero">
+        <div class="centre"><div class="clouds" style="opacity: 0.7;    animation: cloud_scroll 5000s linear infinite; "></div></div>
+        <div class="centre"><div class="clouds" style="opacity: 0.4;    animation: cloud_scroll 3000s linear infinite; "></div></div>
+        <div class="centre"><div class="clouds" style="opacity: 0.3;    animation: cloud_scroll 1500s linear infinite; "></div></div>
+        
+        <div class="layer2" style="transform: translateY(0px);"><img src="content/haze.png" draggable="false" style="scale: 55%;" class="centre"></div>
+        <div class="layer1" style="transform: translateY(0px);"><img src="content/troys_world_exe.png" draggable="false" style="image-rendering:crisp-edges;scale: 50%;" class="centre"></div>
+        <div class="layer3" style="z-index: 10;"><img src="content/tab.png" draggable="false" class="centre">
+
+            <div class="hero-text">
+                <p>
+                    </p><pre style="font-family:'', monospace; font-size: 1.5vh; text-shadow: 0px 0px 6px white,0px 0px 6px white,0px 0px 6px white,0px 0px 6px;"> ___       __   _______   ___       ________  ________  _____ ______   _______                  
+|\  \     |\  \|\  ___ \ |\  \     |\   ____\|\   __  \|\   _ \  _   \|\  ___ \                 
+\ \  \    \ \  \ \   __/|\ \  \    \ \  \___|\ \  \|\  \ \  \\\__\ \  \ \   __/|                
+ \ \  \  __\ \  \ \  \_|/_\ \  \    \ \  \    \ \  \\\  \ \  \\|__| \  \ \  \_|/__              
+  \ \  \|\__\_\  \ \  \_|\ \ \  \____\ \  \____\ \  \\\  \ \  \    \ \  \ \  \_|\ \ ___ ___ ___ 
+   \ \____________\ \_______\ \_______\ \_______\ \_______\ \__\    \ \__\ \_______\\__\\__\\__\
+    \|____________|\|_______|\|_______|\|_______|\|_______|\|__|     \|__|\|_______\|__\|__\|__|
+                     </pre>
+                <p></p>
+                <p>My name is <b style="font-family: serif; color:white; font-size: 3.5vh; text-shadow: 0px 0px 10px black,0px 0px 6px black,0px 0px 10px black,0px 0px 10px;">troy_en</b> I am an indie game developer trying<br> to make stuff that I have an interest in.<br><br>If you need to contact me, please do so via my email:
+                <br><a href="mailto:troy@l-l.dev" target="_blank">&lt;troy@l-l.dev&gt;</a></p>
+                <br>
+                <b>My accounts:</b><br>
+                email:   <a href="mailto:troy@l-l.dev" target="_blank">troy@l-l.dev</a><br>
+                discord: <a href="https://discord.gg/kinitopet" target="_blank">@tr_y</a><br>
+                twitter: <a href="https://twitter.com/troy_en" target="_blank">@troy_en</a><br>
+                youtube: <a href="https://www.youtube.com/@troy_en" target="_blank">@troy_en</a><br>
+                spotify: <a href="https://open.spotify.com/artist/7ywjWmkPfDKg9WvUXLPkhe" target="_blank">@troy_en</a><br>
+                reddit: <a href="https://www.reddit.com/u/troy_en" target="_blank">@troy_en</a><br>
+
             </div>
         </div>
+        <img src="content/hero.png" draggable="false" style="z-index: 5;" class="centre"> 
+
     </div>
-    <footer></footer>
-    -->
 
-    <script>
-        /*
-        // Audio data
-        const audioClips = [
-            { title: "Balls In You Jaws", src: "Balls%20In%20you%20jaws.mp3" },
-            { title: "Lucid Dreamer Audition", src: "Lucid%20Dreamer%20Audition.wav" },
-            { title: "No Insulation Test", src: "NO%20INSULATION%20TEST.mp3" },
-            { title: "Recording", src: "Recording.m4a" },
-            { title: "Scared Child Audition", src: "Scared%20Child%20Audition.mp3" },
-            { title: "Stoned Pizza Guy 1 Audition", src: "Stoned%20Pizza%20Guy%201%20Audition.mp3" },
-            { title: "Lying", src: "lying.mp3" },
-            { title: "Pussy", src: "pussy.mp3" },
-            { title: "Rage 2", src: "rage%202.mp3" },
-            { title: "Rage", src: "rage.mp3" },
-            { title: "Ran 2", src: "ran%202.mp3" }
-        ];
+    <div class="sperator"> 
+        <img src="content/sperator.jpg" draggable="false">
+    </div>
 
-        let currentAudioIndex = 0;
+    <!-- PROJECT CODE -->
+    <div class="projects">
+            <pre style="font-family:'', monospace; font-size: 1.5vh; text-shadow: 0px 0px 6px rgb(255, 196, 240),0px 0px 6px rgb(255, 196, 240),0px 0px 6px rgb(255, 196, 240),0px 0px 6px;">    __ __ _       _ __        ____  ____________ 
+   / //_/(_)___  (_) /_____  / __ \/ ____/_  __/ 
+  / ,&lt;  / / __ \/ / __/ __ \/ /_/ / __/   / / (_)
+ / /| |/ / / / / / /_/ /_/ / ____/ /___  / / _   
+/_/ |_/_/_/ /_/_/\__/\____/_/   /_____/ /_/ (_)  
+            </pre>
+        <div class="project-box">
+            <div class="auto-resizable-iframe"><iframe frameborder="0" allowfullscreen="" src="http://www.youtube.com/embed/6C2O1rzhKls"></iframe></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>   <!-- lol -->
+        </div>
+        <div class="project-box">
 
-        // Elements
-        const audio = document.getElementById('audio');
-        const playPauseBtn = document.getElementById('playPause');
-        const progressBar = document.getElementById('progress');
-        const volumeBar = document.getElementById('volume');
-        const audioTitle = document.getElementById('audioTitle');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
+            <p>KinitoPET is a psychological horror experience that takes place through Kinito, a virtual assistant reminiscent of the early 2000’s. I developed the project alone using godot (v3.3.3) and well- I am honestly really surprised with how well it did with it being my first commercial game and all. You can read more about the inner workings of the game via my patreon (it's free!)</p>
+            <div class="project">
+                <img src="content/SteamImageLowerRes.png" width="25%">
+                <iframe src="https://store.steampowered.com/widget/2075070/" frameborder="0" width="80%" height="190"></iframe>
+            </div>
+                <p style="text-align: center;"><a href="https://www.kinitopet.com" target="_blank">&lt;get_the_game&gt;</a> 
+                    <a href="https://twitter.com/kinitopet" target="_blank">&lt;twitter&gt;</a>
+                    <a href="https://store.steampowered.com/app/2075070/KinitoPET/" target="_blank">&lt;kinitopet.com&gt;</a>  
+                    <a href="https://www.youtube.com/watch?v=5JqENaHTtg8&amp;list=PL9on8fJN3liKqSla5l1NXLh-legAE1bpn" target="_blank">&lt;youtube&gt;</a>
+                    <a href="https://open.spotify.com/album/3pVgKhaRe2ZR8gpBSXPmvR" target="_blank">&lt;spotify&gt;</a>
+                </p>
+        </div>
+    </div>
 
-        // Play/Pause functionality
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                playPauseBtn.textContent = 'Pause';
-            } else {
-                audio.pause();
-                playPauseBtn.textContent = 'Play';
-            }
-        });
 
-        // Update progress bar
-        audio.addEventListener('timeupdate', () => {
-            progressBar.value = (audio.currentTime / audio.duration) * 100 || 0;
-        });
+    <!-- FOOTER -->
+    <br><br><br><br>
+    <div class="sperator"> 
+        <img src="content/sperator.jpg" draggable="false">
+    </div>
+    <!--  -->
+    <script src="script.js"></script> 
 
-        // Seek audio
-        progressBar.addEventListener('input', () => {
-            audio.currentTime = (progressBar.value / 100) * audio.duration;
-        });
 
-        // Adjust volume
-        volumeBar.addEventListener('input', () => {
-            audio.volume = volumeBar.value / 100;
-        });
-
-        // Update audio player UI
-        function loadAudio(index) {
-            const clip = audioClips[index];
-            audio.src = clip.src;
-            audioTitle.textContent = clip.title;
-            audio.load();
-            playPauseBtn.textContent = 'Play';
-        }
-
-        // Next audio
-        nextBtn.addEventListener('click', () => {
-            currentAudioIndex = (currentAudioIndex + 1) % audioClips.length;
-            loadAudio(currentAudioIndex);
-        });
-
-        // Previous audio
-        prevBtn.addEventListener('click', () => {
-            currentAudioIndex = (currentAudioIndex - 1 + audioClips.length) % audioClips.length;
-            loadAudio(currentAudioIndex);
-        });
-
-        // Initialize
-        loadAudio(currentAudioIndex);
-        */
-    </script>
-</body>
-</html>
+</body></html>
